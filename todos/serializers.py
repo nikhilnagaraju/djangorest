@@ -8,6 +8,8 @@ class TodoSerializer(serializers.ModelSerializer):
         fields = (
             'id',
             'title',
-            'description',
+            'created_at',
+            'duedate',
+            'is_finished',
         )
         model = models.Todo

@@ -3,8 +3,24 @@ from django.db import models
 
 class Todo(models.Model):
     title = models.CharField(max_length=200)
-    description = models.TextField()
+    created_at = models.DateTimeField(auto_now=True)
+    duedate = models.DateTimeField(null=True)
+    is_finished = models.BooleanField(default=False)
+    # todolist = models.ForeignKey(TodoList, related_name='todos', on_delete=models.CASCADE)
 
     def __str__(self):
         """A string representation of the model."""
         return self.title
+
+    
+
+    class Meta:
+        ordering = ('duedate',)
+
+    def close(self):
+        self.is_finished = True
+        self.save()
+
+    def reopen(self):
+        self.is_finished = False
+        self.save()
