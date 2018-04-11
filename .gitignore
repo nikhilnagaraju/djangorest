@@ -1,0 +1,6 @@
+*__pycache__
+.idea/inspectionProfiles/
+.idea/vcs.xml
+.idea/workspace.xml
+.idea/backend.iml
+.idea/*
