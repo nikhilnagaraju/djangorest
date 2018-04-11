@@ -37,8 +37,9 @@ $ python3 manage.py runserver
 
 
 browse apis in 
+```
 http://localhost:8000/admin
 http://localhost:8000/api
 http://localhost:8000/api/<id>
-
+```
 
